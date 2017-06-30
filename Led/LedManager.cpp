@@ -100,12 +100,11 @@ void LedManager::Init()
 {
     this->m_EnableMap.clear();
     this->m_UnenableMap.clear();
-
 }
 
 bool LedManager::ReadLedJson()
 {
-    QFile file("C:/workspace/json/json/LED.json");
+    QFile file("E:/workspace/json/json/LED.json");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
          return false;
 

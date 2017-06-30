@@ -51,7 +51,7 @@ void WarningManager::Init()
 
 bool WarningManager::ReadLedJson()
 {
-    QFile file("C:/workspace/json/json/Warning.json");
+    QFile file("E:/workspace/json/json/Warning.json");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return false;
 
