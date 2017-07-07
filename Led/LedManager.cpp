@@ -88,12 +88,27 @@ bool LedManager::ChangeCl15State(QString name, bool cl15State)
 
 void LedManager::Cl15On()
 {
-
+       //CL15上电，有一些关联再CL15的LED灯允许被操作
 }
 
 void LedManager::Cl15Off()
 {
+    //CL15上电，有一些关联再CL15的LED灯允许被操作
+}
 
+bool LedManager::GetLeds(QList<Led> &m_LedList)
+{
+    for(const auto& element:this->m_EnableMap)
+    {
+        m_LedList.push_back(element);
+    }
+    for(const auto& element:this->m_UnenableMap)
+    {
+        m_LedList.push_back(element);
+    }
+    if(m_LedList.size()==0)
+        return false;
+    return true;
 }
 
 void LedManager::Init()

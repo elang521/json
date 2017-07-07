@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QMap>
+#include <QList>
 #include "Led.h"
 
 class LedManager
@@ -19,6 +20,7 @@ public:
     bool ChangeCl15State(QString name,bool cl15State);  //改变某个Ledcl15状态
     void Cl15On();                                      //发动机上电
     void Cl15Off();                                     //发动机掉电
+    bool GetLeds(QList<Led> &m_LedList);                //获取定义的LED灯集合
 private:
     QVariantMap m_LedMap;                       //配置文件map
     QMap<QString,Led> m_EnableMap;              //name,Led组成的map，存放可用的led
@@ -31,7 +33,6 @@ private:
     void Init();
     bool ReadLedJson();                         //读取ledjson配置文件
     bool AddToMap(const QVariantMap &ledMap);   //将XML的信息
-
 public:
     static  LedManager * GetInstance();
 };

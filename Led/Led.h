@@ -26,7 +26,7 @@ private:
 public:
     Led();
     ~Led();
-
+    //属性
     void SetId(int id);
     int GetId();
     void SetWarningId(int warningId);
@@ -61,6 +61,10 @@ public:
     bool GetCommon();
     void SetCl15State(bool cl15State);
     bool getCl15State();
+
+    //方法操作（接收信号，并将信号转发给界面）
+    bool TurnOn();
+    bool TurnOff();
 };
 
 #endif // LED_H

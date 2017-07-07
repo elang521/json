@@ -25,6 +25,7 @@ Led::~Led()
 
 }
 
+//属性
 void Led::SetId(int id)
 {
     this->Id=id;
@@ -195,3 +196,17 @@ bool Led::getCl15State()
 {
     return this->Cl15State;
 }
+
+//方法、操作
+bool Led::TurnOn()
+{
+    //接受亮灯信号，并将亮灯信号传递给HMI
+    return false;
+}
+
+bool Led::TurnOff()
+{
+    //接收关灯信号，并将关灯信号传递给HMI
+}
+
+
