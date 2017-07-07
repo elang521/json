@@ -1,13 +1,14 @@
 #include "LedManager.h"
 
 LedManager* LedManager::m_Manager = NULL;
-
 LedManager *LedManager::GetInstance()
 {
+    std::mutex mutex;
     if (m_Manager == NULL)
     {
+        mutex.lock();
         m_Manager = new LedManager();
-
+        mutex.unlock();
     }
     return m_Manager;
 }

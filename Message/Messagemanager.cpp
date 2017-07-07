@@ -1,23 +1,23 @@
-#include "WarningManager.h"
+#include "MessageManager.h"
 #include <mutex>
 
-WarningManager* WarningManager::m_Manager = NULL;\
+MessageManager* MessageManager::m_Manager = NULL;\
 
-WarningManager *WarningManager::GetInstance()
+MessageManager *MessageManager::GetInstance()
 {
     std::mutex mutex;
     if (m_Manager == NULL)
     {
         mutex.lock();
-        m_Manager = new WarningManager();
+        m_Manager = new MessageManager();
         mutex.unlock();
     }
     return m_Manager;
 }
 
-bool WarningManager::IsExist(QString name)
+bool MessageManager::IsExist(QString name)
 {
-    if(this->m_WarningMap.contains(name))
+    if(this->m_MessageMap.contains(name))
     {
         return true;
     }
@@ -25,38 +25,38 @@ bool WarningManager::IsExist(QString name)
         return false;
 }
 
-bool WarningManager::GetWarningByName(QString name, Warning &m_Warning)
+bool MessageManager::GetMessageByName(QString name, Message &m_Message)
 {
     if(this->IsExist(name))
     {
-        Warning tmp=this->m_WarningMap[name];
-        m_Warning=tmp;
+        Message tmp=this->m_MessageMap[name];
+        m_Message=tmp;
         return true;
     }
     else
         return false;
 }
 
-WarningManager::WarningManager()
+MessageManager::MessageManager()
 {
 
     this->Init();
     this->ReadLedJson();
 }
 
-WarningManager::~WarningManager()
+MessageManager::~MessageManager()
 {
 
 }
 
-void WarningManager::Init()
+void MessageManager::Init()
 {
-    this->m_WarningMap.clear();
+    this->m_MessageMap.clear();
 }
 
-bool WarningManager::ReadLedJson()
+bool MessageManager::ReadLedJson()
 {
-    QFile file("E:/workspace/json/json/Warning.json");
+    QFile file("E:/workspace/json/json/Message.json");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return false;
 
@@ -68,7 +68,7 @@ bool WarningManager::ReadLedJson()
     if (error.error == QJsonParseError::NoError) {
         if (jsonDocument.isObject())  {
             QVariantMap result=jsonDocument.toVariant().toMap();
-            foreach (QVariant plugin, result["Warnings"].toList()) {
+            foreach (QVariant plugin, result["Messages"].toList()) {
                 QVariantMap ledMap= plugin.toMap();
                 this->AddToMap(ledMap);
             }
@@ -83,9 +83,9 @@ bool WarningManager::ReadLedJson()
     return true;
 }
 
-bool WarningManager::AddToMap(const QVariantMap &ledMap)
+bool MessageManager::AddToMap(const QVariantMap &ledMap)
 {
-    Warning mInfo;
+    Message mInfo;
     mInfo.SetId(ledMap["Id"].toInt());
     mInfo.SetLedId(ledMap["LedId"].toInt());
     mInfo.SetName(ledMap["Name"].toString());
@@ -104,7 +104,7 @@ bool WarningManager::AddToMap(const QVariantMap &ledMap)
     mInfo.SetBlink(ledMap["Blink"].toInt());
     mInfo.SetFrequency(ledMap["Frequency"].toInt());
     mInfo.SetMessage(ledMap["Message"].toString());
-    this->m_WarningMap.insert(mInfo.GetName(),mInfo);
+    this->m_MessageMap.insert(mInfo.GetName(),mInfo);
     return true;
 }
 

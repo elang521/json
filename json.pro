@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     Led/LedManager.cpp \
     Warning/Warning.cpp \
     Warning/WarningManager.cpp \
-    Message/Message.cpp
+    Message/Message.cpp \
+    Message/Messagemanager.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -32,4 +33,5 @@ HEADERS += \
     Led/LedManager.h \
     Warning/Warning.h \
     Warning/WarningManager.h \
-    Message/Message.h
+    Message/Message.h \
+    Message/Messagemanager.h
