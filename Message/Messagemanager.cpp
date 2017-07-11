@@ -95,11 +95,7 @@ bool MessageManager::AddToMap(const QVariantMap &ledMap)
     mInfo.SetHeight(ledMap["Height"].toInt());
     mInfo.SetColor(ledMap["Color"].toInt());
     mInfo.SetImage(ledMap["Image"].toString());
-    mInfo.SetSound(ledMap["Sound"].toString());
-    mInfo.SetMovie(ledMap["Movie"].toString());
     mInfo.SetCancel(ledMap["Cancel"].toInt());
-    mInfo.SetResourceX(ledMap["ResourceX"].toInt());
-    mInfo.SetResourceY(ledMap["ResourceY"].toInt());
     mInfo.SetPriority(ledMap["Priority"].toInt());
     mInfo.SetBlink(ledMap["Blink"].toInt());
     mInfo.SetFrequency(ledMap["Frequency"].toInt());

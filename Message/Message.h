@@ -16,11 +16,7 @@ private:
     QString Color;      //图标颜色
     QString Image;      //图标路径
     QString Resolution; //分辨率
-    QString Sound;      //声音文件路径
-    QString Movie;      //动画资源路径或者Id，动画资源有自己独立的配置文件
     int Cancel;         //取消方式
-    int ResourceX;      //资源X坐标
-    int ResourceY;      //资源Y坐标
     int Priority;       //优先级
     bool Blink;         //true:闪烁；flase:持续
     int Frequency;      //闪烁频率
@@ -50,16 +46,7 @@ public:
     QString GetImage();
     void SetResolution(QString resolution);
     QString GetResolution();
-    void SetSound(QString sound);
-    QString GetSound();
-    void SetMovie(QString movie);
-    QString GetMovie();
     void SetCancel(int cancel);
-    int GetCancel();
-    void SetResourceX(int resourceX);
-    int GetResourceX();
-    void SetResourceY(int resourceY);
-    int GetResourceY();
     void SetPriority(int priority);
     int GetPriority();
     void SetBlink(bool blink);

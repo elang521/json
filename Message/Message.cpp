@@ -12,11 +12,7 @@ Message::Message()
     this->Color="";         //图标颜色
     this->Image="";         //图标路径
     this->Resolution="";    //分辨率
-    this->Sound="";         //声音文件路径
-    this->Movie="";         //动画资源路径或者Id，动画资源有自己独立的配置文件
     this->Cancel=0;         //取消方式
-    this->ResourceX=0;      //资源X坐标
-    this->ResourceY=0;      //资源Y坐标
     this->Priority=0;       //优先级
     this->Blink=false;      //true:闪烁；flase:持续
     this->Frequency=0;      //闪烁频率
@@ -129,56 +125,12 @@ QString Message::GetResolution()
     return this->Resolution;
 }
 
-void Message::SetSound(QString sound)
-{
-    this->Sound=sound;
-}
-
-QString Message::GetSound()
-{
-    return this->Sound;
-
-}
-
-void Message::SetMovie(QString movie)
-{
-    this->Movie=movie;
-}
-
-QString Message::GetMovie()
-{
-    return this->Movie;
-}
-
 void Message::SetCancel(int cancel)
 {
     this->Cancel=cancel;
 }
 
-int Message::GetCancel()
-{
-    return this->Cancel;
-}
 
-void Message::SetResourceX(int resourceX)
-{
-    this->ResourceX=resourceX;
-}
-
-int Message::GetResourceX()
-{
-    return this->ResourceX;
-}
-
-void Message::SetResourceY(int resourceY)
-{
-    this->ResourceY=resourceY;
-}
-
-int Message::GetResourceY()
-{
-    return this->ResourceY;
-}
 
 void Message::SetPriority(int priority)
 {
