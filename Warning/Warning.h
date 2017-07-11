@@ -73,6 +73,10 @@ public:
     QString GetMessage();
     void SetCommon(bool common);
     bool GetCommon();
+
+    //消息
+    void Warningon();//告警开始
+    void WarningOff();//告警结束
 };
 
 #endif // WARNING_H

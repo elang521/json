@@ -26,7 +26,6 @@ private:
     int Frequency;      //闪烁频率
     bool State;         //状态
     QString mMessage;    //显示消息
-    bool Common;        //是否属于公共区域 true:属于 false:不属于
 public:
     Message();
     ~Message();
@@ -71,8 +70,10 @@ public:
     bool GetState();
     void SetMessage(QString message);
     QString GetMessage();
-    void SetCommon(bool common);
-    bool GetCommon();
+
+    //Message动作
+    void MessageOn();
+    void MessageOff();
 };
 
 #endif // MESSAGE_H

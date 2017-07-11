@@ -20,6 +20,8 @@ public:
     bool IsExist(QString name);                         //检查配置文件是否定义该LED灯
     bool GetLedByName(QString name,Led &m_Led);         //获取某Led灯配置
     bool ChangeCl15State(QString name,bool cl15State);  //改变某个Ledcl15状态
+
+    //下面的触发等函数，需要一个类似于信号槽的关联函数来触发
     void Cl15On();                                      //发动机上电
     void Cl15Off();                                     //发动机掉电
     bool GetLeds(QList<Led> &m_LedList);                //获取定义的LED灯集合

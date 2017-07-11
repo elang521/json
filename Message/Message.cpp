@@ -22,7 +22,6 @@ Message::Message()
     this->Frequency=0;      //闪烁频率
     this->State=false;      //状态
     this->mMessage="";       //显示消息
-    this->Common=false;     //是否属于公共区域 true:属于 false:不属于
 }
 
 Message::~Message()
@@ -229,14 +228,4 @@ void Message::SetMessage(QString message)
 QString Message::GetMessage()
 {
     return this->mMessage;
-}
-
-void Message::SetCommon(bool common)
-{
-    this->Common=common;
-}
-
-bool Message::GetCommon()
-{
-    return this->Common;
 }
