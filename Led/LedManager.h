@@ -1,7 +1,7 @@
 #ifndef LEDMANAGER_H
 #define LEDMANAGER_H
 
-#include <stdio.h>
+#include <iostream>
 #include <QString>
 #include <QJsonDocument>
 #include <QDebug>

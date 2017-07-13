@@ -233,7 +233,7 @@ QString Warning::GetMessage()
 
 void Warning::SetCommon(bool common)
 {
-    this->Common=common;
+    this->Common=common;z
 }
 
 bool Warning::GetCommon()

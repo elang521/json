@@ -1,0 +1,21 @@
+{
+	"width": 400,
+	"height": 500,
+	"leds": [
+		{
+			"id": 1,//sdsfdsgsdg
+			//"warning_id": 1,
+			"name": "TurnLeft",
+			"precondition": 0,
+			"common": false,
+			"x": 300,
+			"y": 400,
+			"priority": 1,
+			"blink": 1,
+			"cycle": 3,
+			"message": "Turn left!",
+			"icon": "/home/elang/music/turnleft.png",
+			"sound": "/home/elang/music/turnleft.mp3"
+		}
+	]
+}

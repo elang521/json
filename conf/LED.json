@@ -1,58 +1,22 @@
 {
-	"Leds":[
+	"width": 400,
+	"height": 500,
+	"leds": [
 		{
-			"Id":1,
-			"WarningId":1,
-			"Name": "TurnLeft",
-			"Cl15State":true,
-  			"X": 300,
-		  	"Y": 400,
-		  	"Width":400,
-		  	"Height":500,
-		  	"Color":"#FFFFFF",
-		  	"Icon":"/home/elang/music/turnleft.png",
-		  	"Priority": 1,
-		  	"Blink": 1,
-		  	"State":false,
-		  	"Frequency": 3,
-		  	"Message": "Turn left!",
-		  	"Music": "/home/elang/music/turnleft.mp3"
-		},
-		{
-			"Id":1,
-			"WarningId":1,
-			"Name": "TurnRight",
-			"Cl15State":true,
-  			"X": 300,
-		  	"Y": 400,
-		  	"Width":400,
-		  	"Height":500,
-		  	"Color":"#FFFFFF",
-		  	"Icon":"/home/elang/music/turnright.png",
-		  	"Priority": 1,
-		  	"Blink": 1,
-		  	"State":false,
-		  	"Frequency": 3,
-		  	"Message": "Turn right!",
-		  	"Music": "/home/elang/music/turnright.mp3"
-		},
-		{
-			"Id":3,
-			"WarningId":1,
-			"Name": "Back",
-			"Cl15State":true,
-  			"X": 300,
-		  	"Y": 400,
-		  	"Width":400,
-		  	"Height":500,
-		  	"Color":"#FFFFFF",
-		  	"Icon":"/home/elang/music/back.png",
-		  	"Priority": 1,
-		  	"Blink": 1,
-		  	"State":false,
-		  	"Frequency": 3,
-		  	"Message": "Back a car!",
-		  	"Music": "/home/elang/music/back.mp3"
+			"id": 1,//我是真的不知道了
+			"warning_id": 1,
+			"name": "TurnLeft",
+			"precondition": 0,
+			"common": false,
+			"x": 300,
+			"y": 400,
+			"color": "#FFFFFF",
+			"priority": 1,
+			"blink": 1,
+			"cycle": 3,
+			"message": "Turn left!",
+			"icon": "/home/elang/music/turnleft.png",
+			"sound": "/home/elang/music/turnleft.mp3"
 		}
 	]
 }
